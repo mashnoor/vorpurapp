@@ -79,7 +79,7 @@ public class Loader {
                 Log.d("----------", responseString);
                 catagories = brandsGson.fromJson(responseString, Catagory[].class);
                 catagoriesView.setAdapter(new CatagoryAdapter(activity, catagories));
-                Log.d("----------", brands[0].getDescription());
+                Log.d("----------", catagories[0].getName());
             }
 
             @Override

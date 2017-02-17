@@ -27,17 +27,18 @@ public class MainActivity extends Activity {
 
 
    @BindView(R.id.brandsList) TwoWayView brandsView;
-    Brand[] brands;
+    @BindView(R.id.catagoryList) TwoWayView catagoryView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(MainActivity.this);
-        
-       // catagoryView = (TwoWayView) findViewById(R.id.catagoryList);
+
+
         Loader.loadAllBrands(this, brandsView); //Show Brands Horizontal List
-        //Loader.loadAllCatagories(MainActivity.this, catagoryView); //Show All Catagory List
+        Loader.loadAllCatagories(MainActivity.this, catagoryView); //Show All Catagory List
         //loadAllBrands();
 
     }
