@@ -3,6 +3,7 @@ package com.vorpur.android.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -14,6 +15,8 @@ import com.vorpur.android.R;
 import com.vorpur.android.constants.URLS;
 import com.vorpur.android.models.Brand;
 import com.vorpur.android.models.Catagory;
+
+import static java.security.AccessController.getContext;
 
 /**
  * Created by Mashnoor on 2/12/17.
@@ -48,7 +51,8 @@ public class BrandAdapter extends BaseAdapter
 
         if(convertView == null)
         {
-            convertView = View.inflate(activity, R.layout.catagory_card_view, null);
+            LayoutInflater inflater = (LayoutInflater)  activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.brand_look_like, null);
         }
 
         TextView t = (TextView) convertView.findViewById(R.id.mytext);

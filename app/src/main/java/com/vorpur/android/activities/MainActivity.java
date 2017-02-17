@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(MainActivity.this);
         brandsView = (TwoWayView) findViewById(R.id.brandsList);
-        catagoryView = (TwoWayView) findViewById(R.id.catagoryList);
+       // catagoryView = (TwoWayView) findViewById(R.id.catagoryList);
        // Loader.loadAllBrands(this, brandsView); //Show Brands Horizontal List
         //Loader.loadAllCatagories(MainActivity.this, catagoryView); //Show All Catagory List
         loadAllBrands();

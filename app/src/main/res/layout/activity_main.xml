@@ -14,7 +14,6 @@
         android:id="@+id/brandsList"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
 
         style="@style/TwoWayView"
 
@@ -23,11 +22,7 @@
         android:drawSelectorOnTop="false"
          />
 
-    <org.lucasr.twowayview.TwoWayView
-        android:id="@+id/catagoryList"
-        android:layout_width="match_parent"
-        style="@style/TwoWayView"
-        android:layout_height="wrap_content" />
+
 
 
 </LinearLayout>
