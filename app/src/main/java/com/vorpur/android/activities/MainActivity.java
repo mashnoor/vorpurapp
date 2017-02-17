@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
 
 
 
-   TwoWayView brandsView, catagoryView;
+   @BindView(R.id.brandsList) TwoWayView brandsView;
     Brand[] brands;
 
     @Override
@@ -34,45 +34,14 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(MainActivity.this);
-        brandsView = (TwoWayView) findViewById(R.id.brandsList);
+        
        // catagoryView = (TwoWayView) findViewById(R.id.catagoryList);
-       // Loader.loadAllBrands(this, brandsView); //Show Brands Horizontal List
+        Loader.loadAllBrands(this, brandsView); //Show Brands Horizontal List
         //Loader.loadAllCatagories(MainActivity.this, catagoryView); //Show All Catagory List
-        loadAllBrands();
+        //loadAllBrands();
 
     }
 
-    public  void loadAllBrands() {
-
-        AsyncHttpClient client = new AsyncHttpClient();
-        client.get(URLS.GET_ALL_BRANDS, new AsyncHttpResponseHandler() {
-
-            @Override
-            public void onStart() {
-                // called before request is started
-            }
-
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] response) {
-                String responseString = new String(response);
-                Gson brandsGson = new GsonBuilder().create();
-                Log.d("----------", responseString);
-                brands = brandsGson.fromJson(responseString, Brand[].class);
-                brandsView.setAdapter(new BrandAdapter(MainActivity.this, brands));
-
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
-
-            }
-
-            @Override
-            public void onRetry(int retryNo) {
-
-            }
-        });
-    }
 
 
 
