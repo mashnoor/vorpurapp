@@ -63,6 +63,7 @@ public class Loader {
     //Catagory Loaders
     public static  void loadAllCatagories(final Activity activity, final TwoWayView catagoriesView) {
 
+        
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(URLS.GET_ALL_CATAGORIES, new AsyncHttpResponseHandler() {
 
