@@ -120,4 +120,24 @@ public class Loader {
         });
     }
 
+    public static void loadDiscounts(Activity activity, ImageView discount1, ImageView discount2, ImageView discount3)
+    {
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(URLS.GET_DISCOUNTS, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                
+                String responseString = new String(responseBody);
+                Gson discountGson = new GsonBuilder().create();
+
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+    }
+
 }

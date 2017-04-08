@@ -16,4 +16,6 @@ public class URLS {
     final public static String PRODUCT_IMAGE = "http://104.131.22.246:8080/api/product/image/";
 
     final public static String GET_LATEST_THREE_PRODUCTS = "http://104.131.22.246:8080/api/products/getlatestthreeproducts";
+
+    final public static String GET_DISCOUNTS = "http://104.131.22.246:8080/api/discounts/getdiscounts";
 }
